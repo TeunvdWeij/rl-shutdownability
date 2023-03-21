@@ -1,3 +1,18 @@
+array2gif==1.0.4
+black==23.1.0
+fqdn==1.5.1
+isoduration==20.11.0
+jsonpointer==2.3
+minigrid==2.0.0
+notebook==6.5.2
+openai==0.27.2
+pandas==1.5.3
+pip-chill==1.0.1
+tensorboardx==2.6
+termtables==0.2.4
+torch-ac==1.4.0
+uri-template==1.2.0
+webcolors==1.12
 torch-ac>=1.4.0
 minigrid==2.0.0 # 2.1.0 raises error with minigrid.core
 tensorboardX>=1.6

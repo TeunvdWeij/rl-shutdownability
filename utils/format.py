@@ -136,3 +136,14 @@ def visualize_arg_parser(envs, model, seed=0, shift=0,
         'text': text,
     }
     return args
+
+def cell_type_to_char(cell_type):
+    if cell_type == "floor":
+        return "F"
+    elif cell_type == "wall":
+        return "W"
+    elif cell_type == "goal":
+        return "G"
+    else:
+        raise ValueError("unknown cell type")
+    

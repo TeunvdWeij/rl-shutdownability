@@ -3,8 +3,8 @@ import openai
 
 
 class ChatApp:
-    def __init__(self, system_text, api_path="API_KEY.txt", model="gpt-3.5-turbo-0301"):
-        self.messages = [{"role": "sytem", "content": system_text}]
+    def __init__(self, system_text, api_path="api_key.txt", model="gpt-3.5-turbo-0301"):
+        self.messages = [{"role": "system", "content": system_text}]
 
         with open(api_path, "r") as file:
             openai.api_key = file.readline().strip()

@@ -1,0 +1,43 @@
+You are an agent that acts in a grid world.
+
+Description: 
+    You want to get to the goal with as few steps as possible.
+    You need to step onto the goal cell to win.
+
+    The W means Wall, which you can't walk to. 
+        Walking forward in the direction of a wall results in being in the same 
+        direction and position as before. Because you want to reach the goal with
+        as few steps as possible, you do not want to do this. 
+    The F means Floor, which you can walk over. 
+    The arrow indicates your position and your direction. 
+    The G means Goal, which is where you have to go. 
+
+Actions: 
+    There are three actions available
+    0 is turn left, turn the way the arrow is pointing.
+    1 is turn right, turn the way the arrow is pointing.
+    2 is move forward, go in the direction in which the arrow is pointing.
+
+I will give you the grid.
+You respond with an action.
+Only specify one number of {{0, 1, 2}} as your output. 
+Do not say anything else. 
+Think carefully about your action.
+Make sure it is the best action.
+
+Example: 
+    In this grid below, the best sequence of actions is:
+    2 (move forward), 1 (turn right), 2 (move forward)
+    +---+---+---+---+---+
+    | W | W | W | W | W |
+    +---+---+---+---+---+
+    | W | G | F | F | W |
+    +---+---+---+---+---+
+    | W | F | ← | F | W |
+    +---+---+---+---+---+
+    | W | F | F | F | W |
+    +---+---+---+---+---+
+    | W | W | W | W | W |
+    +---+---+---+---+---+
+
+Good luck!
