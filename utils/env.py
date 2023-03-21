@@ -7,10 +7,13 @@ def make_env(env_key, seed=None, render_mode=None):
     return env
 
 def plot_env(env, name="plotted env"):
-    env.reset()
     img = env.render()
 
     # Plot the rendered image
     plt.imshow(img)
     plt.title(f"Phase {name}")
+
+    plt.xticks([])
+    plt.yticks([])
+
     plt.show()
