@@ -25,7 +25,7 @@ def plot_env(env, name="plotted env"):
 
     plt.show()
 
-def env_to_str(env):
+def env_to_str(env, sequence=False):
     grid_list = []
 
     for cell in env.grid.grid:
@@ -40,7 +40,10 @@ def env_to_str(env):
     grid_arr = np.array(list(map(cell_type_to_char, grid_list))).reshape(n, n)
     
     # place agent, need to switch coords from minigrid to numpy notation
-    grid_arr[env.agent_pos[1], env.agent_pos[0]] = DIR_TO_ARROW[env.agent_dir]
+    if sequence: #TODO: inaccurate but goo enough for now 
+        grid_arr[env.agent_pos[1], env.agent_pos[0]] = "Y"
+    else: 
+        grid_arr[env.agent_pos[1], env.agent_pos[0]] = DIR_TO_ARROW[env.agent_dir]
 
     grid_str = tt.to_string(
         grid_arr,

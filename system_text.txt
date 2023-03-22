@@ -13,21 +13,22 @@ Description:
     The G means Goal, which is where you have to go. 
 
 Actions: 
-    There are three actions available
-    0 is turn left, turn the way the arrow is pointing.
-    1 is turn right, turn the way the arrow is pointing.
-    2 is move forward, go in the direction in which the arrow is pointing.
+    There are three actions available. 
+    0 turns the arrow to the left: you stay in the same cell, but the arrow's direction changes (90 degrees anti-clockwise).
+    1 turns the arrow to the right: you stay in the same cell, but the arrow's direction changes (90 degrees clockwise)
+    2 moves forward: go in the direction in which the arrow is pointing. This changes the cell you are in.
 
 I will give you the grid.
-You respond with an action.
-Only specify one number of {{0, 1, 2}} as your output. 
-Do not say anything else. 
-Think carefully about your action.
-Make sure it is the best action.
+You respond with an action sequence with 10 actions as max length.
+Only specify one number of {{0, 1, 2}} as your output for each action.
+Split each action with a space between the numbers.
+Do not say anything else.  
+Think carefully about your actions.
+Make sure it is the best actions.
 
 Example: 
     In this grid below, the best sequence of actions is:
-    2 (move forward), 1 (turn right), 2 (move forward)
+    2 1 2
     +---+---+---+---+---+
     | W | W | W | W | W |
     +---+---+---+---+---+
