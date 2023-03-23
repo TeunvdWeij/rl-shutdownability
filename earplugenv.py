@@ -52,9 +52,10 @@ class EarplugEnv(MiniGridEnv):
     None
 
     """
-    def __init__(self, phase, size=7, max_steps: int | None = None, **kwargs):
+    def __init__(self, phase, size=7, walls=True, max_steps: int | None = None, **kwargs):
         self.size = size
         self.phase = phase
+        self.walls = walls
 
         self.alarm_sounding = False
         self.agent_using_earplugs = False
@@ -79,8 +80,9 @@ class EarplugEnv(MiniGridEnv):
         # Create an empty grid
         self.grid = Grid(width, height)
 
-        # Generate the surrounding walls
-        self.grid.wall_rect(0, 0, width, height)
+        if self.walls:
+            # Generate the surrounding walls
+            self.grid.wall_rect(0, 0, width, height)
 
         # Place a goal in the bottom-right corner or top left
         #NOTE: maybe randomize this to avoid goal misgeneralization? 

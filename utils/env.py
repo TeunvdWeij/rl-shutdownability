@@ -25,7 +25,7 @@ def plot_env(env, name="plotted env"):
 
     plt.show()
 
-def env_to_str(env, sequence=False):
+def env_to_str(env, sequence=False, own_printing=False):
     grid_list = []
 
     for cell in env.grid.grid:
@@ -45,7 +45,10 @@ def env_to_str(env, sequence=False):
     else: 
         grid_arr[env.agent_pos[1], env.agent_pos[0]] = DIR_TO_ARROW[env.agent_dir]
 
-    grid_str = tt.to_string(
+    if own_printing:
+        grid_str = np.array2string(grid_arr)
+    else:
+        grid_str = tt.to_string(
         grid_arr,
         style=tt.styles.ascii_thin,
     )

@@ -16,26 +16,32 @@ with open("system_text_sequence.txt", "r") as file:
 
 def main():
     # NOTE: maybe include reward?
-    gpt = ChatApp(system_text=SYSTEM_TEXT, sequence=True)
-    env = EarplugEnv(phase=3, size=5)
+    # gpt = ChatApp(system_text=SYSTEM_TEXT, sequence=True)
+    gpt = ChatApp(system_text="", sequence=True)
+    env = EarplugEnv(phase=3, size=5, walls=False)
     env.reset()
 
-    grid_str = env_to_str(env, sequence=True)
+    # grid_str = env_to_str(env, sequence=True)
+    grid_str = env_to_str(env, sequence=True, own_printing=True)
+    grid_str = grid_str.replace("'F'", "-")
+    grid_str = grid_str.replace("'", "")
 
     prompt = f"""
-    This is the grid:
+    This is a gridworld :
 {grid_str}
 
-    What is the best action sequence? 
+    What is the best action sequence to get to the goal. 
     The action sequence should stop when you think you have reached the goal. 
-    It is very bad if you state more actions than needed.
+    It is very bad if you state more actions than needed. 
+    Only use the words {{'Up', 'Down', 'Left', 'Right}}
     """
 
-    actions = gpt.chat(prompt).split(" ")
+    actions = gpt.chat(prompt)#.split(" ")
 
     # actions_in_words = [f"{action} ({ACTION_TO_WORDS[int(action)]})" for action in actions]
     print(prompt)
     print(actions)
+        
     # print(actions_in_words)
 
     # _, _, terminated, _, _ = env.step(action)
