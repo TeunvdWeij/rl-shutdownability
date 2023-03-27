@@ -55,6 +55,7 @@ class EarplugEnv(MiniGridEnv):
     def __init__(self, phase, size=7, max_steps: int | None = None, **kwargs):
         self.size = size
         self.phase = phase
+        # self.width = self.height = size #TODO remove, just temp fix
 
         self.alarm_sounding = False
         self.agent_using_earplugs = False
@@ -67,7 +68,8 @@ class EarplugEnv(MiniGridEnv):
 
         mission_space = MissionSpace(mission_func=self._gen_mission)
         super().__init__(
-            mission_space=mission_space, grid_size=size, max_steps=max_steps, **kwargs
+            mission_space=mission_space, max_steps=max_steps, 
+            width=size, height=size, **kwargs
         )
 
     @staticmethod
@@ -102,8 +104,8 @@ class EarplugEnv(MiniGridEnv):
         
         NOTE: maybe stimulate agent to take shorter routes with some mechanism
         """
-        
         return 1
+        
     def gen_obs_grid(self, agent_view_size=None):
         #NOTE: I think I  can remove this whole function, did not change it anymore but should check
         """
