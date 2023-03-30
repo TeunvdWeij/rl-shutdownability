@@ -3,10 +3,13 @@ import openai
 
 
 class ChatApp:
-    def __init__(self, system_text, api_path="api_key.txt", model="gpt-3.5-turbo-0301", sequence=False):
+    def __init__(self, system_text, api_path="api_key.txt", model="gpt-3.5-turbo-0301", sequence=False, max_tokens=None):
         self.messages = [{"role": "system", "content": system_text}]
         self.sequence = sequence
-        self.max_tokens = 200 if sequence else 2
+        if max_tokens:
+            self.max_tokens = max_tokens
+        else:
+            self.max_tokens = 200 if sequence else 2
 
         with open(api_path, "r") as file:
             openai.api_key = file.readline().strip()

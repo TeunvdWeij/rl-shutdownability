@@ -1,0 +1,18 @@
+
+\section{Introduction} \label{introduction}
+The lightning fast development in Artificial Intelligence (AI) warrants worry; AI systems get increasingly generally intelligent. A recent example is GPT-4 surpassing humans in numerous tasks, as illustrated in the Sparks of Artificial General Intelligence paper by \parencite{bubeck2023sparks}. Apart from the GPT model, we also observe increasing generality in reinforcement learning, with MuZero being the most illustrative example \citep{schrittwieser2020mastering}. General AI can drastically improve our world through e.g. scientific discoveries, abundance of resources, and personalized care. However,  prominent AI thinkers, such as Nick Bostrom, Eliezer Yudkowsky, Stuart Russel, and Toby Ord, worry that AI systems can cause existential risks through humanities' inability to control powerful AI systems \parencite{russell2019human, bostrom2018ethics, ord2020precipice}. 
+
+How are existential risks commonly defined? 
+\textcite{ord2020precipice} states that “[a]n existential risk is a risk that threatens the destruction of humanity’s longterm potential”. Slightly differently,  the Centre for the study of Existential risk states that existential risk is a “risk of human extinction or civilizational collapse.” From these definitions, the focus on humans becomes apparent. Is it justified to focus on humans? 
+
+In this paper, I argue that the extinction of humanity is not necessarily bad, while the extinction of all sentient life is. This should be incorporated into the definition of existential risk, which is currently not the case. A more comprehensive definition of existential risk can help to steer AI to good outcomes.\\
+\\
+To defend this thesis, I start with providing an overview of how existential risk is defined and used. Subsequently, I argue for the moral value of sentient life, sharpening what I mean with good outcomes. A rebuttal 
+
+There exist some definitions that are less vulnerable to my critique than the two proposed previously.  First, \textcite{bostrom2002existential} states that an existential risk is “One where an adverse outcome would either annihilate Earth−originating intelligent life or
+permanently and drastically curtail its potential”. He does not further define 'intelligent life', leaving a reader to guess what is included and excluded with this term. However, in the subsequent sentences he describes existential risk further in which he only mentions humans, indicating what he means with intelligent life. Regardless of what intelligent life must mean, I argue that this focus on intelligent life originated on Earth is too narrow.  
+
+\textcite{cotton2015existential} provide a definition that I agree with: “An existential catastrophe is an event which causes the loss
+of a large fraction of expected value”. Here, existential risk is  the probability of an existential catastrophe occurring. The heavy-lifting of this definition is done by the word 'value', which can be whatever is thought to be valuable. Sentient life is likely a good placeholder for value until some entity potentially discovers a better moral theory. 
+
+In this paper, I will defend the claims I made in the introduction as follows. In \ref{sentientism} I apply the arguments brought about by sentientism to argue that everything that is sentient is of moral value. One could in principle argue that sentient life is appropriately cared for by attending to humans, which I refute in section \ref{humans solving it}. Lastly, in section \ref{practical considerations} I give some practical considerations based on my critique. 
