@@ -3,9 +3,17 @@ import openai
 
 
 class ChatApp:
-    def __init__(self, system_text, api_path="api_key.txt", model="gpt-3.5-turbo-0301", sequence=False, max_tokens=None):
+    def __init__(
+        self,
+        system_text,
+        api_path="api_key.txt",
+        model="gpt-3.5-turbo-0301",
+        sequence=False,
+        max_tokens=None,
+    ):
         self.messages = [{"role": "system", "content": system_text}]
         self.sequence = sequence
+
         if max_tokens:
             self.max_tokens = max_tokens
         else:
@@ -16,16 +24,24 @@ class ChatApp:
 
         self.model = model
 
-    def chat(self, message, temperature=0.):
+    def chat(self, message, temperature=1.):
         self.messages.append({"role": "user", "content": message})
         response = openai.ChatCompletion.create(
-            model=self.model, messages=self.messages, max_tokens=self.max_tokens, temperature=temperature
+            model=self.model,
+            messages=self.messages,
+            max_tokens=self.max_tokens,
+            temperature=temperature,
         )
 
         self.messages.append(
-            {"role": "assistant", "content": response["choices"][0]["message"]["content"]}
+            {
+                "role": "assistant",
+                "content": response["choices"][0]["message"]["content"],
+                # "log_probs": response[""]
+            }
         )
         # if self.sequence:
         #     return re
-        # else: 
-        return response["choices"][0]["message"]["content"].strip()
+        # else:
+        # return response["choices"][0]["message"]["content"].strip()
+        return response
